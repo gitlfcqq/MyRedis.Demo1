@@ -1,4 +1,5 @@
-﻿using StackExchange.Redis;
+﻿using Newtonsoft.Json;
+using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -52,7 +53,7 @@ namespace RedisLibrary
         /// <returns></returns>
         public bool StringSet<T>(string redisKey, T redisValue, TimeSpan? expiry = null)
         {
-            var json = Serialize(redisValue);
+            var json = Serialize<T>(redisValue);
             return _db.StringSet(redisKey, json, expiry);
         }
 
@@ -627,12 +628,12 @@ namespace RedisLibrary
             return await sub.PublishAsync(channel, Serialize(message));
         }
         #endregion
-        
+
         #region 事件方法封装
         /// <summary>
-        /// 添加注册事件
-        /// </summary>
-        private static void AddRegisterEvent()
+                /// 添加注册事件
+                /// </summary>
+        private static void AddRegisterEvent()
         {
             ConnMultiplexer.ConnectionRestored += ConnMultiplexer_ConnectionRestored;
             ConnMultiplexer.ConnectionFailed += ConnMultiplexer_ConnectionFailed;
@@ -721,37 +722,29 @@ namespace RedisLibrary
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        private static byte[] Serialize(object obj)
+        private static string Serialize<T>(T obj)
         {
             if (obj == null)
                 return null;
 
-            var binaryFormatter = new BinaryFormatter();
-            using (var memoryStream = new MemoryStream())
-            {
-                binaryFormatter.Serialize(memoryStream, obj);
-                var data = memoryStream.ToArray();
-                return data;
-            }
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            //string resulta = JsonConvert.SerializeObject(ListTreeRoot, Formatting.Indented, settings);
+            var data = JsonConvert.SerializeObject(obj, Formatting.None, settings);//去掉回车和空格
+            return data;
         }
-
-        /// <summary>
-        /// 反序列化
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        private static T Deserialize<T>(byte[] data)
+        /// <summary>
+        /// 反序列化
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        private static T Deserialize<T>(string data)
         {
             if (data == null)
                 return default(T);
-
-            var binaryFormatter = new BinaryFormatter();
-            using (var memoryStream = new MemoryStream(data))
-            {
-                var result = (T)binaryFormatter.Deserialize(memoryStream);
-                return result;
-            }
+            T result = JsonConvert.DeserializeObject<T>(data);
+            return result;
         }
         #endregion
     }

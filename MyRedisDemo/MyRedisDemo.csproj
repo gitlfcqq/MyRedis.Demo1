@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MyRedisEntity\MyRedisEntity.csproj" />
     <ProjectReference Include="..\RedisLibrary\RedisLibrary.csproj" />
   </ItemGroup>
 
