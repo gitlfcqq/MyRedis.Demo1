@@ -33,6 +33,7 @@
 
 *.bin
 *.obj
+/MyRedis.Demo1/.vs
 /MyRedisDemo/bin/Debug/net5.0
 /MyRedisDemo/obj
 /RedisLibrary/bin/Debug/net5.0
