@@ -33,7 +33,11 @@
 
 *.bin
 *.obj
+*.vs
+
 /MyRedis.Demo1/.vs
+/MyRedisDemo1/.vs
+/MyRedis.Demo1/.vs/MyRedisDemo/
 /MyRedisDemo/bin/Debug/net5.0
 /MyRedisDemo/obj
 /RedisLibrary/bin/Debug/net5.0
@@ -43,7 +47,5 @@
 <<<<<<< HEAD
 /RedisPublish/obj
 /RedisSub/obj
-=======
->>>>>>> 0e70eea49cb258f7aa82decb520a709aeac253e0
 /RedisPublish/bin/Debug/net5.0
 /RedisSub/bin/Debug/net5.0
