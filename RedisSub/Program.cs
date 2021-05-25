@@ -23,7 +23,7 @@ namespace RedisSub
 						if (msg != "CTRL:PULSE")
 						{
 							//此处可以写入日志记录
-
+							Console.WriteLine($"{channel}:" + msg);
 						}
 
 					};
@@ -33,7 +33,7 @@ namespace RedisSub
 						Console.WriteLine("订阅客户端：开始订阅" + channel);
 					};
 					//取消订阅频道时
-					subscription.OnUnSubscribe = (a) => { Console.WriteLine("订阅客户端：取消订阅"); };
+					//subscription.OnUnSubscribe = (a) => { Console.WriteLine("订阅客户端：取消订阅"); };
 					//订阅频道
 					string topicname = "Tom is a good cat";
 					subscription.SubscribeToChannels(topicname);
