@@ -38,6 +38,9 @@
 /MyRedis.Demo1/.vs
 /MyRedisDemo1/.vs
 /MyRedis.Demo1/.vs/MyRedisDemo/
+/MyRedis.Demo1/.vs/MyRedisDemo/DesignTimeBuild/
+/MyRedis.Demo1/.vs/MyRedisDemo/DesignTimeBuild/*.dtbcache.v2.*
+/MyRedis.Demo1/.vs/MyRedisDemo/v16/
 /MyRedisDemo/bin/Debug/net5.0
 /MyRedisDemo/obj
 /RedisLibrary/bin/Debug/net5.0
