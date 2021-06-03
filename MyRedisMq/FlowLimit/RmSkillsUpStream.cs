@@ -38,6 +38,7 @@ namespace MyRedisMq.FlowLimit
                     else
                     {
                         //写入队列，rm_skills 用户编号
+                        Console.WriteLine($"{i}:入队成功!");
                         messageQueue.EnQueue("rm_skills", i + "");
                     }
                 }
