@@ -52,3 +52,12 @@
 /RedisSub/obj
 /RedisPublish/bin/Debug/net5.0
 /RedisSub/bin/Debug/net5.0
+/MyRedisMq/obj
+/MyRedisMq/bin/Debug/net5.0
+/MyRedisRmPoints/bin/Debug/net5.0
+/MyRedisRmPoints/obj
+/MyRedisRmSms/bin/Debug/net5.0
+/MyRedisRmSms/obj/Debug/net5.0
+/MyRedisRmSms/obj
+/MyRedisRmUpSystem/obj
+/MyRedisRmUpSystem/bin/Debug/net5.0

@@ -9,7 +9,7 @@ namespace RedisLibrary
 {
 
 
-    public class RedisClient
+    public class RedisClient2
     {
         static ConnectionMultiplexer redis = null;
         IDatabase db = null;
@@ -31,7 +31,7 @@ namespace RedisLibrary
                 db = null;
             }
         }
-        public RedisClient()
+        public RedisClient2()
         {
         }
         #region String 

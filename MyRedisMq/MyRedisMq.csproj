@@ -6,9 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspCore.RedisClient" Version="1.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <Folder Include="Coupler\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="ServiceStack.Redis" Version="5.11.0" />
     <PackageReference Include="StackExchange.Redis" Version="2.2.4" />
   </ItemGroup>
 
