@@ -9,20 +9,18 @@ namespace RedisLibrary
 {
 
 
-    public class RedisClient2
+    public class RedisClient
     {
         static ConnectionMultiplexer redis = null;
         IDatabase db = null;
 
-        public void InitConnect(IConfiguration Configuration)
+        public void InitConnect(string configuration)
         {
             try
             {
-                var RedisConnection = Configuration.GetConnectionString("RedisConnectionString");
-                if (string.IsNullOrEmpty(RedisConnection)) RedisConnection = "127.0.0.1:6379";
-
-                redis = ConnectionMultiplexer.Connect(RedisConnection);
-                db = redis.GetDatabase();
+                var connectionWriteString = "127.0.0.1:6379";
+                IConnectionMultiplexer redis = ConnectionMultiplexer.Connect(connectionWriteString);
+                db = redis.GetDatabase(0);
             }
             catch (Exception ex)
             {
@@ -31,8 +29,9 @@ namespace RedisLibrary
                 db = null;
             }
         }
-        public RedisClient2()
+        public RedisClient()
         {
+            if (redis == null || db == null) InitConnect("");
         }
         #region String 
         /// <summary>
@@ -94,7 +93,7 @@ namespace RedisLibrary
         /// <param name="list">list</param>
         /// <param name="db_index">数据库序号，不传默认为0</param>
         /// <returns></returns>
-        public bool addList<T>(string listkey, List<T> list, int db_index = 0)
+        public bool AddList<T>(string listkey, IList<T> list, int db_index = 0)
         {
             if (db == null)
             {
@@ -112,7 +111,7 @@ namespace RedisLibrary
         /// <param name="listkey">Key</param>
         /// <param name="db_index">数据库序号，不传默认为0</param>
         /// <returns></returns>
-        public List<T> getList<T>(string listkey, int db_index = 0)
+        public IList<T> GetList<T>(string listkey, int db_index = 0)
         {
             //var db = redis.GetDatabase(db_index);
             if (db == null)
