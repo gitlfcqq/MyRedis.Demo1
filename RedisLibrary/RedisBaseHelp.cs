@@ -12,10 +12,10 @@ namespace RedisLibrary
     public class RedisBaseHelp
     {
         //1.连接字符串（redis数据库默认端口为：6379）
-        private static readonly string ConnectionWriteString = "127.0.0.1:6379";
+        private static readonly string ConnectionString = "127.0.0.1:6379";
 
         //2.创建连接
-        private static readonly IConnectionMultiplexer ConnMultiplexer = ConnectionMultiplexer.Connect(ConnectionWriteString);
+        private static readonly IConnectionMultiplexer ConnMultiplexer = ConnectionMultiplexer.Connect(ConnectionString);
 
         //3.数据库
         private readonly IDatabase _db = ConnMultiplexer.GetDatabase(0);//参数为创建的数据库的位置
