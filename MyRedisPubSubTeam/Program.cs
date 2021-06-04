@@ -8,7 +8,7 @@ namespace MyRedisPubSubTeam
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("RmTeam微服务开始订阅数据库消息!");
+            Console.WriteLine("团购微服务开始订阅数据库消息!");
 
             //订阅数据库主题
             RedisPubSub redisPubSub = new RedisPubSub();
@@ -24,6 +24,8 @@ namespace MyRedisPubSubTeam
                 rmSms.UpdateDataBase(databaseEnv);
 
             });
+
+            Console.ReadKey();
         }
     }
 }

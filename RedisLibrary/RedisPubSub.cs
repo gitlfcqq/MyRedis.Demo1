@@ -17,13 +17,14 @@ namespace RedisLibrary
     public class RedisPubSub
     {
         //1.连接字符串（redis数据库默认端口为：6379）
-        private readonly string ConnectionString = "127.0.0.1:6379";
+        private readonly string ConnectionString = "localhost:6379";
 
         private ConnectionMultiplexer connectionMultiplexer;
 
         public RedisPubSub()
         {
-            connectionMultiplexer = ConnectionMultiplexer.Connect(ConnectionString);
+            if (connectionMultiplexer == null)
+                connectionMultiplexer = ConnectionMultiplexer.Connect(ConnectionString);
         }
 
         /// <summary>
@@ -39,14 +40,14 @@ namespace RedisLibrary
             ChannelMessageQueue channelMessageQueue = sub.Subscribe(messageTopic);
 
             //如何处理消息
-            channelMessageQueue.OnMessage(message =>
-            {
-                //获取消息
-                string topic = message.Message;
+            //channelMessageQueue.OnMessage(message =>
+            //{
+            //    //获取消息
+            //    string topic = message.Message;
 
-                //开始做业务逻辑封装
+            //    //开始做业务逻辑封装
 
-            });
+            //});
 
             channelMessageQueue.OnMessage(handle);
 

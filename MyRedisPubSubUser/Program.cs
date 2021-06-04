@@ -24,6 +24,8 @@ namespace MyRedisPubSubUser
                 rmSms.UpdateDataBase(databaseEnv);
 
             });
+
+            Console.ReadKey();
         }
     }
 }

@@ -28,6 +28,8 @@ namespace MyRedisPubSubActivity
 
             });
 
+            Console.ReadKey();
+
         }
     }
 }
