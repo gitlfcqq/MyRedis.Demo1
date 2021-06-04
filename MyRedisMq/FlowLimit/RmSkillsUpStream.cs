@@ -11,20 +11,22 @@ namespace MyRedisMq.FlowLimit
     class RmSkillsUpstream
     {
         /// <summary>
-        /// 处理最大请求数
+        /// 处理最大流量请求数
         /// </summary>
         private int HandleRequestCount = 1000;
-
+        /// <summary>
+        /// 所有流量请求入口
+        /// </summary>
+        /// <param name="requestCount"></param>
         public void CreateSkillOrder(int requestCount)
         {
 
             Console.WriteLine($"秒杀请求数量:{requestCount}");
 
             //系统宕机
-            if (HandleRequestCount < requestCount)
-            {
-
-            }
+            //if (HandleRequestCount < requestCount)
+            //{
+            //}
             //使用redis消息队列优化流量请求
             using (var messageQueue = new RedisMessageQueue("localhost:6379"))
             {
@@ -43,11 +45,18 @@ namespace MyRedisMq.FlowLimit
                     }
                 }
             }
+
+            #region 直接调用下游业务消费
             //Console.WriteLine($"开始调用下游秒杀业务");
             //RmSkillsDownStream rmSkillsDownStream = new RmSkillsDownStream();
 
             //rmSkillsDownStream.HandleRequest(requestCount);
-            //Console.WriteLine($"完成调用下游秒杀业务");
+            //Console.WriteLine($"完成调用下游秒杀业务"); 
+            #endregion
+
+            #region 拆分解耦消费
+            //通过MyRedisRmUpSystem调用上游服务进行
+            #endregion
         }
     }
 }

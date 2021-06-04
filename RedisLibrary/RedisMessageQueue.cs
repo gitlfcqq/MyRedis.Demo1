@@ -13,7 +13,8 @@ namespace RedisLibrary
 
         public RedisMessageQueue(string redisHost)
         {
-            redisClient = new RedisClient(redisHost);
+            if (redisClient == null)
+                redisClient = new RedisClient(redisHost);
         }
         /// <summary>
         /// 入队

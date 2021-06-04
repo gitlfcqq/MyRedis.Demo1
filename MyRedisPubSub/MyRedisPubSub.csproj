@@ -6,14 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Coupler\**" />
-    <EmbeddedResource Remove="Coupler\**" />
-    <None Remove="Coupler\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="ServiceStack.Redis" Version="5.11.0" />
     <PackageReference Include="StackExchange.Redis" Version="2.2.4" />
   </ItemGroup>
 

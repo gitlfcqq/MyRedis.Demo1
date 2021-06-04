@@ -61,3 +61,14 @@
 /MyRedisRmSms/obj
 /MyRedisRmUpSystem/obj
 /MyRedisRmUpSystem/bin/Debug/net5.0
+/MyRedisPubSub/bin/Debug/net5.0
+/MyRedisPubSub/obj
+/MyRedisPubSubSms/obj
+/MyRedisPubSubSms/bin/Debug/net5.0
+/MyRedisPubSubActivity/obj/Debug/net5.0
+/MyRedisPubSubActivity/obj
+/MyRedisPubSubTeam/bin/Debug/net5.0
+/MyRedisPubSubTeam/obj
+/MyRedisPubSubActivity/bin/Debug/net5.0
+/MyRedisPubSubUser/bin/Debug/net5.0
+/MyRedisPubSubUser/obj
