@@ -51,7 +51,6 @@ namespace MyRedisMq.Async
             }
             #endregion
 
-
             stopwatch.Stop();
             Console.WriteLine($"订单完成耗时:{stopwatch.ElapsedMilliseconds}ms！");
 

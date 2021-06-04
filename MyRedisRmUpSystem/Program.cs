@@ -10,11 +10,11 @@ namespace MyRedisRmUpSystem
         {
             using (var messageQueue = new RedisMessageQueue("localhost:6379"))
             {
-                Console.WriteLine("秒杀上游消息.......");
+                Console.WriteLine("消费秒杀上游消息处理开始.......");
                 //获取积分消息
                 while (true)
                 {
-                    //消息秒杀上游消息
+                    //秒杀上游消息
                     string order_sn = messageQueue.BDeQueue("rm_skills", TimeSpan.FromSeconds(60));
 
                     if (!string.IsNullOrEmpty(order_sn))

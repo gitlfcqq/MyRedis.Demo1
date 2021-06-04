@@ -33,7 +33,7 @@ namespace MyRedisMq.FlowLimit
                     long counts = messageQueue.GetQueueCount("rm_skills");
                     if (counts > HandleRequestCount)
                     {
-                        Console.WriteLine($"系统正在系统繁忙，请稍候！");
+                        Console.WriteLine($"系统正在系统繁忙，{i}请稍候！");
                     }
                     else
                     {
