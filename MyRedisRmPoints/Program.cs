@@ -1,5 +1,5 @@
 ﻿using MyRedisRmPoints.Async;
-using MyRedisRmPoints.MQ;
+using RedisLibrary;
 using System;
 
 namespace MyRedisRmPoints

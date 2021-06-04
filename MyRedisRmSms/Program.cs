@@ -1,5 +1,5 @@
 ﻿using MyRedisRmSms.Async;
-using MyRedisRmSms.MQ;
+using RedisLibrary;
 using System;
 
 namespace MyRedisRmSms

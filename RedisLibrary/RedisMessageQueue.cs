@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyRedisMq.MQ
+namespace RedisLibrary
 {
-    class RedisMessageQueue : IDisposable
+    public class RedisMessageQueue : IDisposable
     {
         public RedisClient redisClient { get; }
 

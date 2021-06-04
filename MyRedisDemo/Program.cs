@@ -85,7 +85,7 @@ namespace MyRedisDemo
                 Name = "Fish Zhang5",
                 BlogIds = blogIdsList
             };
-            RedisClient client = new RedisClient();
+            RedisClientHelp client = new RedisClientHelp();
             IList<User> userList = new List<User>();
             userList.Add(yangUser);
             userList.Add(zhangUser);

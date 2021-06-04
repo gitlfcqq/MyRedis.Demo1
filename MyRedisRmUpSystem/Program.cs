@@ -1,5 +1,5 @@
 ﻿using MyRedisRmUpSystem.FlowLimit;
-using MyRedisRmUpSystem.MQ;
+using RedisLibrary;
 using System;
 
 namespace MyRedisRmUpSystem

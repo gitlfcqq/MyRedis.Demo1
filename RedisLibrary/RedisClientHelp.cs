@@ -7,9 +7,7 @@ using System.Linq;
 
 namespace RedisLibrary
 {
-
-
-    public class RedisClient
+    public class RedisClientHelp
     {
         static ConnectionMultiplexer redis = null;
         IDatabase db = null;
@@ -29,7 +27,7 @@ namespace RedisLibrary
                 db = null;
             }
         }
-        public RedisClient()
+        public RedisClientHelp()
         {
             if (redis == null || db == null) InitConnect("");
         }
