@@ -1,10 +1,12 @@
 ﻿using Newtonsoft.Json;
+using ServiceStack.Redis;
 using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RedisLibrary
@@ -745,6 +747,47 @@ namespace RedisLibrary
                 return default(T);
             T result = JsonConvert.DeserializeObject<T>(data);
             return result;
+        }
+        #endregion
+
+        #region 分布式锁
+        /// <summary>
+        /// 分布式锁
+        /// </summary>
+        /// <param name="key">锁key</param>
+        /// <param name="lockExpirySeconds">锁自动超时时间(秒)</param>
+        /// <returns></returns>
+        public bool Lock(string key, int lockExpirySeconds = 10)
+        {
+            if (string.IsNullOrEmpty(key)) key = "redis_lock";
+            //间隔等待50毫秒
+            int waitIntervalMs = 50;
+
+            //循环加锁
+            while (true)
+            {
+                bool flag = _db.LockTake(key, Thread.CurrentThread.ManagedThreadId, TimeSpan.FromSeconds(lockExpirySeconds));
+
+                if (flag) { break; }
+
+                //防止系统宕机
+                Thread.Sleep(waitIntervalMs);
+            }
+            return false;
+
+        }
+        /// <summary>
+        /// 删除锁 执行完代码以后调用释放锁
+        /// </summary>
+        /// <param name="key"></param>
+        public void UnLock(string key)
+        {
+            if (string.IsNullOrEmpty(key)) key = "redis_lock";
+
+            //Thread.CurrentThread.ManagedThreadId保证加锁及解锁是同一个线程  
+            _db.LockRelease(key, Thread.CurrentThread.ManagedThreadId);
+            ConnMultiplexer.Close();
+
         }
         #endregion
     }

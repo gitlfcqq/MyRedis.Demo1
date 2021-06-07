@@ -33,15 +33,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imgs", "imgs", "{E4F3685B-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PubSub", "PubSub", "{A6DD06A4-447A-4602-95B4-2DF9BC5E67E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRedisPubSub", "MyRedisPubSub\MyRedisPubSub.csproj", "{6828AD24-6F6F-4850-9F7E-5E5BF88AE870}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRedisPubSub", "MyRedisPubSub\MyRedisPubSub.csproj", "{6828AD24-6F6F-4850-9F7E-5E5BF88AE870}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRedisPubSubSms", "MyRedisPubSubSms\MyRedisPubSubSms.csproj", "{5CE30120-237E-4064-A805-C2EA93D59007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRedisPubSubSms", "MyRedisPubSubSms\MyRedisPubSubSms.csproj", "{5CE30120-237E-4064-A805-C2EA93D59007}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRedisPubSubActivity", "MyRedisPubSubActivity\MyRedisPubSubActivity.csproj", "{BB858D8C-97A9-479A-8114-D295DB3F1EE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRedisPubSubActivity", "MyRedisPubSubActivity\MyRedisPubSubActivity.csproj", "{BB858D8C-97A9-479A-8114-D295DB3F1EE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRedisPubSubTeam", "MyRedisPubSubTeam\MyRedisPubSubTeam.csproj", "{89A9E9C0-A4F8-4DC5-BA76-3EACA5BDB562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRedisPubSubTeam", "MyRedisPubSubTeam\MyRedisPubSubTeam.csproj", "{89A9E9C0-A4F8-4DC5-BA76-3EACA5BDB562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRedisPubSubUser", "MyRedisPubSubUser\MyRedisPubSubUser.csproj", "{DC817075-9686-46BD-90B8-C48ED01D02B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRedisPubSubUser", "MyRedisPubSubUser\MyRedisPubSubUser.csproj", "{DC817075-9686-46BD-90B8-C48ED01D02B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DistributedLock", "DistributedLock", "{18CF6E4C-8B69-4B04-9891-F81FFF62A4DD}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
