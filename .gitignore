@@ -6,6 +6,7 @@
 *.lo
 *.o
 *.obj
+*.suo
 
 # Precompiled Headers
 *.gch
@@ -72,3 +73,5 @@
 /MyRedisPubSubActivity/bin/Debug/net5.0
 /MyRedisPubSubUser/bin/Debug/net5.0
 /MyRedisPubSubUser/obj
+.vs/MyRedisDemo/v16/.suo
+.vs/MyRedisDemo/v16/.suo
