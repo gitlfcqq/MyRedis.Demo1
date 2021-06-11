@@ -32,6 +32,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imgs", "imgs", "{E4F3685B-4
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PubSub", "PubSub", "{A6DD06A4-447A-4602-95B4-2DF9BC5E67E3}"
+	ProjectSection(SolutionItems) = preProject
+		MyRedisPubSub\README.md = MyRedisPubSub\README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRedisPubSub", "MyRedisPubSub\MyRedisPubSub.csproj", "{6828AD24-6F6F-4850-9F7E-5E5BF88AE870}"
 EndProject
