@@ -14,12 +14,11 @@ namespace MyRedisPubSub.Config
     {
         public void UpdateDataBase(string dataBaseEvn)
         {
-            Console.WriteLine($"配置中心开始更新数据库环境,{dataBaseEvn}");
+            Console.WriteLine($"配置中心开始更新数据库环境:{dataBaseEvn}");
 
             //开始发布
             RedisPubSub redisPubSub = new RedisPubSub();
             redisPubSub.Pub("database", dataBaseEvn);
-
 
             Console.WriteLine($"更新数据库环境成功:{dataBaseEvn}");
         }

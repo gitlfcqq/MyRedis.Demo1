@@ -1,4 +1,5 @@
 ﻿using MyRedisPubSub.Config;
+using System.Configuration;
 using System;
 
 namespace MyRedisPubSub
@@ -10,20 +11,20 @@ namespace MyRedisPubSub
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("订阅发布!");
+            Console.WriteLine("订阅发布后台!");
 
-            //开发环境
-            string dev = "dev";
+            ////开发环境
+            //string dev = "dev";
+            ////测试环境
+            //string test = "test";
+            ////生产环境
+            //string pro = "pro";
 
-            //测试环境
-            string test = "test";
-
-            //生产环境
-            string pro = "pro";
-
+            //y
+            string dataBaseEvn = ConfigurationManager.AppSettings["DataBaseEvn"];
             //开始调用配置中心
             RmConfig rmConfig = new RmConfig();
-            rmConfig.UpdateDataBase(dev);
+            rmConfig.UpdateDataBase(dataBaseEvn);
 
             Console.ReadKey();
         }
